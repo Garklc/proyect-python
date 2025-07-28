@@ -1,0 +1,18 @@
+user_form.py
+
+def user_form():
+    name = input("Nombre: ")
+    age = int(input("Edad: "))
+    is_student = input("¿Eres estudiante? (s/n): ").lower() == 's'
+    height = float(input("Altura (en metros): "))
+    weight = float(input("Peso (en kilogramos): "))
+
+    print("\nInformación ingresada:")
+    print(f"Nombre: {name}")
+    print(f"Edad: {age}")
+    print(f"Es estudiante: {is_student}")
+    print(f"Altura: {height} m")
+    print(f"Peso: {weight} kg")
+
+if __name__ == "__main__":
+    user_form()

@@ -1,0 +1,15 @@
+# Archivos temporales
+*.tmp
+*.log
+
+# Entornos virtuales
+venv/
+env/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de Python compilados
+*.pyc
+__pycache__/

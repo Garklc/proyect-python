@@ -1,0 +1,14 @@
+number_sign/number_sign.py
+
+def check_number(number):
+    if number > 0:
+        return "Positivo"
+    elif number < 0:
+        return "Negativo"
+    else:
+        return "Cero"
+
+if __name__ == "__main__":
+    num = float(input("Ingresa un número: "))
+    result = check_number(num)
+    print(f"El número es: {result}")

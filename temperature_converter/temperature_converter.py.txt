@@ -1,0 +1,57 @@
+temperature_converter.py
+
+def temperature_converter(temp, unit):
+    if unit.lower() == 'celsius':
+        return (temp * 9/5) + 32
+    elif unit.lower() == 'fahrenheit':
+        return (temp - 32) * 5/9
+    else:
+        return "Unidad no válida"
+
+def currency_converter(amount, from_currency, to_currency):
+    exchange_rates = {
+        'USD': {'EUR': 0.85},
+        'EUR': {'USD': 1.18}
+    }
+    if from_currency in exchange_rates and to_currency in exchange_rates[from_currency]:
+        return amount * exchange_rates[from_currency][to_currency]
+    else:
+        return "Tipo de cambio no disponible"
+
+def length_converter(length, from_unit, to_unit):
+    conversion_factors = {
+        'meters': {'feet': 3.281},
+        'feet': {'meters': 0.3048}
+    }
+    if from_unit in conversion_factors and to_unit in conversion_factors[from_unit]:
+        return length * conversion_factors[from_unit][to_unit]
+    else:
+        return "Conversión no válida"
+
+# Ejemplo de uso
+if __name__ == "__main__":
+    print("Conversor de Unidades")
+    print("1. Temperatura")
+    print("2. Moneda")
+    print("3. Longitud")
+    choice = int(input("Elige una opción: "))
+
+    if choice == 1:
+        temp = float(input("Ingresa la temperatura: "))
+        unit = input("Ingresa la unidad (Celsius/Fahrenheit): ")
+        result = temperature_converter(temp, unit)
+        print(f"Resultado: {result}")
+    elif choice == 2:
+        amount = float(input("Ingresa la cantidad: "))
+        from_currency = input("Ingresa la moneda inicial (USD/EUR): ")
+        to_currency = input("Ingresa la moneda objetivo (USD/EUR): ")
+        result = currency_converter(amount, from_currency, to_currency)
+        print(f"Resultado: {result} {to_currency}")
+    elif choice == 3:
+        length = float(input("Ingresa la longitud: "))
+        from_unit = input("Ingresa la unidad inicial (meters/feet): ")
+        to_unit = input("Ingresa la unidad objetivo (meters/feet): ")
+        result = length_converter(length, from_unit, to_unit)
+        print(f"Resultado: {result} {to_unit}")
+    else:
+        print("Opción no válida")
